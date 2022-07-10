@@ -1,43 +1,43 @@
 # Basic
-title: 潘柏信
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+title: 骁哥
+subtitle: 个人博客
+description: 欢迎来到我的个人博客~
 # 头像里面的标题
-avatarTitle: leopardpan
+avatarTitle: litianc
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
-url: "http://leopardpan.cn"
+avatarDesc: Developer / 区块链
+url: "https://litianc.github.io"
 
 # 博客是否自动生成目录，false为不生成
 enableToc: true
 
 # Comment
 comment:
-    # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
-    disqus: leopard
+    livere: MTAyMC81Njc5MC8zMzI1NA  # https://www.livere.com
+    # disqus: leopard
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
 social:
-    weibo: 5366874726 
-    github: leopardpan
-    # zhihu: panpanleopard
+    #weibo: 5366874726 
+    github: litianc
+    zhihu: xiao-ge-79-63
     # juejin: xxx
-    jianshu: 2ada30d8d0f7
-    # twitter: 
-    mail: leopardpan@icloud.com
+    # jianshu: 2ada30d8d0f7
+    twitter: BJTUTC
+    mail: lixiaoyutc@gmail.com
 
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+    id: 071dd7b04197f0b708e021b608c214f2
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
-ga:
-    id: UA-84134159-3  
-    host: auto  
+#ga:
+   # id: UA-84134159-3  
+   # host: auto  
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
