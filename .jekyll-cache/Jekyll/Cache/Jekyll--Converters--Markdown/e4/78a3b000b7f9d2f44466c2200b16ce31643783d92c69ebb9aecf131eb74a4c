@@ -1,0 +1,21 @@
+I"�
+<ul>
+  <li><a href="#第一性原理分析swarm的经济激励">第一性原理分析Swarm的经济激励</a>
+    <ul>
+      <li><a href="#1-swarm简介">1 Swarm简介</a></li>
+      <li><a href="#2-swarm的经济激励设计">2 Swarm的经济激励设计</a>
+        <ul>
+          <li><a href="#21-共享带宽的激励">2.1 共享带宽的激励</a></li>
+          <li><a href="#22-节点发现的激励">2.2 节点发现的激励</a></li>
+          <li><a href="#23-数据存储的激励">2.3 数据存储的激励</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-swarm的发展方向分析">3 Swarm的发展方向分析</a>
+        <ul>
+          <li><a href="#4-总结">4 总结</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
