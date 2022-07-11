@@ -1,0 +1,15 @@
+I"O
+<ul>
+  <li><a href="#filecoin-手续费模型-超额燃烧">Filecoin 手续费模型-超额燃烧</a>
+    <ul>
+      <li><a href="#前言">前言</a></li>
+      <li><a href="#filecoin的手续费回顾">Filecoin的手续费回顾</a></li>
+      <li><a href="#超额燃烧的由来">超额燃烧的由来</a></li>
+      <li><a href="#超额燃烧的计算">超额燃烧的计算</a></li>
+      <li><a href="#feature还是bug">Feature还是bug？</a></li>
+      <li><a href="#超额燃烧优化">超额燃烧优化</a></li>
+      <li><a href="#总结">总结</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

@@ -1,0 +1,17 @@
+I"�
+<ul>
+  <li><a href="#数字钱包-hd-walletbip32密钥派生">数字钱包 HD Wallet（BIP32密钥派生）</a>
+      - {:.} <a href="#前言">前言</a>
+      - {:.} <a href="#hd-wallet的由来">HD Wallet的由来</a>
+      - {:.} <a href="#bip32和它小伙伴们">BIP32和它小伙伴们</a>
+      - {:.} <a href="#bip32相关疑问">BIP32相关疑问</a>
+      - {:.} <a href="#确定性钱包的特点">确定性钱包的特点</a>
+      - {:.} <a href="#bip32规范">BIP32规范</a>
+          - {:.} <a href="#密钥派生函数child-key-derivation-function">密钥派生函数（Child Key Derivation function）</a>
+          - {:.} <a href="#密钥树">密钥树</a>
+          - {:.} <a href="#主密钥生成">主密钥生成</a>
+      - {:.} <a href="#bip32安全讨论">BIP32安全讨论</a>
+      - {:.} <a href="#总结">总结</a>
+      - {:.} <a href="#参考文献">参考文献</a></li>
+</ul>
+:ET

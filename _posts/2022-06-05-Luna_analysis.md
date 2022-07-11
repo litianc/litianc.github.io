@@ -2,7 +2,7 @@
 layout: post
 title: Luna 崩盘分析与启发
 description: 从原理出发写一篇分析 Terra 稳定币的文章。综合近一个月左右所闻所思，希望本文的分析能更好的帮助读者了解 Terra 以及算法稳定币系统。
-tags: 区块链
+tags: 区块链 Luna
 ---
 
 # Luna 崩盘分析与启发
