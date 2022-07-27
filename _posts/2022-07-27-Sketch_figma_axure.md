@@ -146,7 +146,6 @@ Figma 的原型模型集成良好且易于使用，并且由于它是基于云�
   alt="figma交互设计">
   <center>Figma 中的原型制作类似于其他在屏幕之间使用连接箭头的工具</center>
 </figure>
-![figma交互设计](/images/posts/figma_sketch/toptal-blog-image-7.jpeg)
 
 Sketch 和 Figma 都支持简单的原型设计，带有“对象到画板”链接和一组有限的过渡。插件有助于增强 Sketch 的简单原型设计功能，但在为原型提供强大的交互模型方面，Axure 是最强大的。
 
