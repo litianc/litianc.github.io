@@ -2,7 +2,7 @@
 layout: post
 title: 如何构建你的链上简历
 description: 你的链上活动就是最好的简历。
-tag: 区块链
+tags: 区块链
 ---
 
 # 如何构建你的链上简历
@@ -48,15 +48,20 @@ tag: 区块链
 我们这里提供一份不完整的Web3应用清单，根据各个项目方提供的应用文档，可学习详细的操作步骤。
 
 * [ENS](https://ens.domains/)
-以太坊域名服务(ENS)是去中心化世界的使用最广泛的域名。ENS为用户提供了一种将人类可读的名称映射到区块链资源的方法，如以太坊地址、IPFS散列或网站url。ENS域名可以在二级市场上买卖。ENS是区块链社区爱好者人手必备的身份标识，未来有机会取代DNS域名。目前，ENS已开放3位及以上长度的域名注册，3～4位的域名价格较高，超过5位数的注册单价都是每年$5。
 
-* [DeFi](https://www.coinbase.com/learn/crypto-basics/what-is-defi)（Decentralised Finance）是去中心化金融产品的简称，它们继承了Bitcoin的基本属性，数字资产，并基于数字资产构建了一套对标华尔街的金融服务系统，但不需要支付中间商费用。我们将DeFi作为一个类别推荐给读者，用户可以通过DeFi产品的交互在链上为自己的金融用户身份留下足迹，如：[Uniswap](https://uniswap.org/)（资产兑换）、[Compound](https://compound.finance/)（借贷）、[MakerDao](https://makerdao.com/zh-CN/)（合成资产）、[dydx](https://dydx.exchange/)（杠杆交易）。
+    以太坊域名服务(ENS)是去中心化世界的使用最广泛的域名。ENS为用户提供了一种将人类可读的名称映射到区块链资源的方法，如以太坊地址、IPFS散列或网站url。ENS域名可以在二级市场上买卖。ENS是区块链社区爱好者人手必备的身份标识，未来有机会取代DNS域名。目前，ENS已开放3位及以上长度的域名注册，3～4位的域名价格较高，超过5位数的注册单价都是每年$5。
+
+* [DeFi](https://www.coinbase.com/learn/crypto-basics/what-is-defi)
+
+    DeFi（Decentralised Finance）是去中心化金融产品的简称，它们继承了Bitcoin的基本属性，数字资产，并基于数字资产构建了一套对标华尔街的金融服务系统，但不需要支付中间商费用。我们将DeFi作为一个类别推荐给读者，用户可以通过DeFi产品的交互在链上为自己的金融用户身份留下足迹，如：[Uniswap](https://uniswap.org/)（资产兑换）、[Compound](https://compound.finance/)（借贷）、[MakerDao](https://makerdao.com/zh-CN/)（合成资产）、[dydx](https://dydx.exchange/)（杠杆交易）。
 
 * [Rabbithole.gg](https://rabbithole.gg/)
-Rabbithole在crypto行业有特殊含义，它源于《经济学人》的一篇关于DeFi的文章《Down the rabbit hole》。而我们说的Rabbithole是一个学习Crypto和Web3的平台，区别于传统的教学网站以模拟系统为主，它的学习任务是在真实的应用上完成指定操作，并给完成任务的地址发送NFT证书。同理，可将NFT换成其他FT资产。这是一种非常典型的Play to earn的模式，并且获取收益的条件非常透明。
+
+    Rabbithole在crypto行业有特殊含义，它源于《经济学人》的一篇关于DeFi的文章《Down the rabbit hole》。而我们说的Rabbithole是一个学习Crypto和Web3的平台，区别于传统的教学网站以模拟系统为主，它的学习任务是在真实的应用上完成指定操作，并给完成任务的地址发送NFT证书。同理，可将NFT换成其他FT资产。这是一种非常典型的Play to earn的模式，并且获取收益的条件非常透明。
 
 * [Degenscore](https://degenscore.com/)
-DegenScore，这是一套用于衡量用户“对加密货币痴迷”程度的体系，汇总了钱包内的所有交易信息作为数据源。DS根据用户在以太坊生态系统中的经验为加密货币用户提供声誉评分。他们从数百个项目，并用以太坊的行动作为奖励积分。用户会得到一个总分，他们可以用它来作为加入独家产品发布和顶级用户社区的身份凭证。
+
+    DegenScore，这是一套用于衡量用户“对加密货币痴迷”程度的体系，汇总了钱包内的所有交易信息作为数据源。DS根据用户在以太坊生态系统中的经验为加密货币用户提供声誉评分。他们从数百个项目，并用以太坊的行动作为奖励积分。用户会得到一个总分，他们可以用它来作为加入独家产品发布和顶级用户社区的身份凭证。
 
 ## 链上简历的应用场景
 
