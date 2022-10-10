@@ -2,7 +2,7 @@
 layout: post
 title: 如何构建你的链上简历
 description: 你的链上活动就是最好的简历。
-tags: 区块链
+tag: 区块链
 ---
 
 # 如何构建你的链上简历
