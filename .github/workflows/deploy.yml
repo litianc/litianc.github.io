@@ -25,7 +25,7 @@ jobs:
         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
         TARGET: ${{ secrets.DEPLOY_TARGET }}
-
+#
     # - name: Purge Cloudflare Cache
     #   uses: jakejarvis/cloudflare-purge-action@v0.3.0
     #   env:
