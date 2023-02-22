@@ -18,6 +18,10 @@ jobs:
       #    - name: Build
       #      uses: jerryjvl/jekyll-build-action@v1
 
+    - name: echo secrets
+        run:
+          echo {{ secrets.DEPLOY_HOST }}
+
     - name: ssh-deploy
       uses: easingthemes/ssh-deploy@v2.1.4
       env:
@@ -27,5 +31,3 @@ jobs:
         REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
         SOURCE: "css/"
         TARGET: ${{ secrets.DEPLOY_TARGET }}
-      run:
-        echo $REMOTE_USER
