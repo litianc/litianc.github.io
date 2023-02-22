@@ -7,6 +7,7 @@ on:
 jobs:
   jekyll:
     name: Build and deploy Jekyll Site
+    environment: gh-jekyll
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +19,6 @@ jobs:
 
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.1
-      environment: gh-jekyll
       env:
         SSH_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
 MIIJKQIBAAKCAgEAugcBiz84c25NELCX7XQ6wzlPIT7xjYk31EmraZ4PjXKLZCdt
