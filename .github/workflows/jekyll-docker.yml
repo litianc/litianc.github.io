@@ -9,6 +9,7 @@ on:
 jobs:
   jekyll:
     name: Build and deploy Jekyll site
+    environment: gh-jekyll
     runs-on: ubuntu-latest
 
     steps:
