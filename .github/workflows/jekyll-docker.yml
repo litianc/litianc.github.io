@@ -20,7 +20,7 @@ jobs:
 
     - name: echo secrets
       run:
-        echo {{ secrets.DEPLOY_HOST }}
+        echo ${{ secrets.DEPLOY_HOST }}
 
     - name: ssh-deploy
       uses: easingthemes/ssh-deploy@v2.1.4
