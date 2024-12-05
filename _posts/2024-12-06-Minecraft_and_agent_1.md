@@ -14,7 +14,7 @@ tags: AI 人工智能 Agent
 ## 我的世界=西部世界?
 
 大语言模型的出现给了开放世界类游戏更多想象空间，尤其是深受Z时代喜爱的《我的世界》（Minecraft），快要被智能体玩坏了。Project Sid 智能体文明项目由初创公司 Altera 推出，它在 Minecraft 的 1000 个自主的 AI 智能体合作数天，“涌现”出政府、经济、文化、宗教等组织行为，在共同创建的虚拟社会中开展各种各样的任务。此外，有大学生提出通过LLM驱动DND（Dungeons and Dragons）项目，让NPC在游戏中扮演更加复杂和真实的人物角色，提供更加丰富和沉浸式的游戏体验。复旦NLP团队和米哈游，联合发表论文《综述：全新大语言模型驱动的Agent》讨论了人机共存的虚拟世界中LLM的价值和社会的复杂性。
-
+<!-- 
 <div align="center" style="display: flex; justify-content: center; align-items: flex-end;">
   <div style="margin: 10px;">
     <img src="/images/posts/Minecraft_and_agent_1/dnd.png" alt="地下城与龙" style="height: auto; max-height: 300px;">
@@ -265,4 +265,4 @@ Minecraft启动器分为官方启动器与第三方启动器，二者的功能�
 
 此外，近一年AI的能力提升速度非常快，除了趣味性，AI结合虚拟社会的影响力和伦理问题也值得我们关注。总之，我会继续围绕我的世界和智能体开展更多工作。
 
-> Ps：本文部分内容由AI参与撰写，感谢Claude AI的协助。
+> Ps：本文部分内容由AI参与撰写，感谢Claude AI的协助。 -->
