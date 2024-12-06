@@ -194,7 +194,7 @@ Minecraft启动器分为官方启动器与第三方启动器，二者的功能�
 
   - 模型选择
   
-    Mindcraft 默认支持 OpenAI|Gemini|Anthropic|Replicate|Hugging Face|Groq|Ollama|Qwen|Novita 等模型API接口，并且也可以通过本地化部署模型来实现，但社区用户测试，演示效果最好的是Anthropic和OpenAI的模型，因此，这里演示Anthropic的模型API接口（Claude-sonnet-3.5）。
+    Mindcraft 默认支持 ```OpenAI|Gemini|Anthropic|Replicate|Hugging Face|Groq|Ollama|Qwen|Novita``` 等模型API接口，并且也可以通过本地化部署模型来实现，但社区用户测试，演示效果最好的是Anthropic和OpenAI的模型，因此，这里演示Anthropic的模型API接口（Claude-sonnet-3.5）。
 
     *注：Anthropic是Claude大模型的母公司。*
   
