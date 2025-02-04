@@ -133,18 +133,20 @@ Environment="OLLAMA_ORIGINS=*"
 此时，在后台查看GPU使用情况，可以看到GPU内存平均每张卡占用30GB左右。
 ![gpu usage](/images/posts/deepseek_deploy/image-gpu-usage1.png)
 
-- 减少GPU卡重新运行
-如果将GPU卡减少到4块，实际使用的是序号为“0、1、2、3”四块GPU，在提问相同问题时，GPU的显存占用翻倍。
-![gpu usage 4 pieces](/images/posts/deepseek_deploy/image-gpu-usage2.png)
+2. 测试启动模型的最小GPU卡数
+
+减少GPU卡重新运行，如果将GPU卡减少到4块，实际使用的是序号为“0、1、2、3”四块GPU，在提问相同问题时，GPU的显存占用翻倍。
+![gpu usage 4 pieces](/images/posts/deepseek_deploy/image-gpu-usage-2.png)
 
 进一步如果将GPU卡减少到2块，在提问相同问题时，发现GPU的显存溢出，无法提供正确的回答。
 
 因此，用ollama运行DeepSeek-R1-2.51Bit量化版本，建议使用3～4块H20。
 
-- 进一步降低量化精度
-采用1.58Bit量化版本，实际测试两块H20显卡能够运行成功。
 
-![gpu usage 1.58bit](/images/posts/deepseek_deploy/image-gpu-uasge-3.png)
+3. 测试1.58-bit量化所需卡数
+
+进一步降低量化精度，采用1.58-bit量化版本，实际测试两块H20显卡能够运行成功。
+![gpu usage 1.58bit](/images/posts/deepseek_deploy/image-gpu-usage-3.png)
 
 ## 总结
 DeepSeek-R1系列发布了8个开源模型，其中原生DeepSeek的只有R1-Zero和R1，其他模型则是基于DeepSeek基础模型进行知识蒸馏，并采用Qwen或LLaMA架构的二次开发版本。本文动手部署了原生的R1版，当然受限于硬件条件限制采用了2.51-bit量化方案，并实际测试得出需要使用4块H20来进行部署2.51-bit量化的版本，需要2块H20来部署1.58-bit量化的版本。此外，根据社区的一些分析，R1经1.58-bit量化后最小可以部署在1张4090卡上，当然这种情况需要反复加载激活参数，对推理速度有较大的影响。
