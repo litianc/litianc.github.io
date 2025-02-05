@@ -81,72 +81,86 @@ modelscope download --model unsloth/DeepSeek-R1-GGUF DeepSeek-R1-UD-Q2_K_XL-0000
 modelscope download --model unsloth/DeepSeek-R1-GGUF DeepSeek-R1-UD-Q2_K_XL-00005-of-00005.gguf --local_dir ~/dir
 ```
 
-- 合并模型文件
+### 合并模型文件
 由于当前ollama还没有支持gguf分片启动，因此，需要使用llama-gguf-split工具将刚刚得到5个字文件进行合并操作。
 1. 安装 llama-gguf-split
-``` sh
-git clone https://github.com/ggerganov/llama.cpp.git
-cd llama.cpp
-cmake -B build
-cmake --build build --config Release
-# 编译好的模型文件放在llama.cpp.git/build/bin中
-```
+    ``` sh
+    git clone https://github.com/ggerganov/llama.cpp.git
+    cd llama.cpp
+    cmake -B build
+    cmake --build build --config Release
+    # 编译好的模型文件放在llama.cpp.git/build/bin中
+    ```
 2. 合并模型
-``` sh
-cd build/bin
-./llama-gguf-split --merge ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-2.51bit.gguf
-```
+    ``` sh
+    cd build/bin
+    ./llama-gguf-split --merge ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-2.51bit.gguf
+    ```
 
 ### ollama运行启动
 1. 导入gguf并创建模型
-``` sh
-echo "FROM ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-2.51bit.gguf" > ~/Modelfile 
-cd ~
-ollama create deepSeek-quant-2.51bit -f Modelfile
-```
+    ``` sh
+    cat <<EOF > ~/Modelfile
+    FROM ~/dir/DeepSeek-R1-UD-Q2_K_XL/DeepSeek-R1-2.51bit.gguf
+    TEMPLATE """{{- if .System }}{{ .System }}{{ end }}
+    {{- range $i, $_ := .Messages }}
+    {{- $last := eq (len (slice $.Messages $i)) 1}}
+    {{- if eq .Role "user" }}<｜User｜>{{ .Content }}
+    {{- else if eq .Role "assistant" }}<｜Assistant｜>{{ .Content }}{{- if not $last }}<｜end▁of▁sentence｜>{{- end }}
+    {{- end }}
+    {{- if and $last (ne .Role "assistant") }}<｜Assistant｜>{{- end }}
+    {{- end }}"""
+    PARAMETER stop <｜begin▁of▁sentence｜>
+    PARAMETER stop <｜end▁of▁sentence｜>
+    PARAMETER stop <｜User｜>
+    PARAMETER stop <｜Assistant｜>
+    EOF
+    cd ~
+    ollama create deepSeek-quant-2.51bit -f Modelfile
+    ```
 
 2. 验证
-``` sh
-ollama list
-```
+    ``` sh
+    ollama list
+    ```
 看到如下输出，即说明R1模型启动成功
-``` sh
-NAME                             ID              SIZE      MODIFIED   
-deepSeek-quant-2.51bit:latest    2be8d2cc207c    226 GB    2 minutes ago 
-```
+    ``` sh
+    NAME                             ID              SIZE      MODIFIED   
+    deepSeek-quant-2.51bit:latest    2be8d2cc207c    226 GB    2 minutes ago 
+    ```
 
 ### 测试效果
 1. 对话测试
 
-因测试前端软件运行的本人电脑，与运行ollama和DeepSeek-R1的机器放在相同局域内网，因此，需要调整ollama配置，并重新启动。
-ubuntu在默认位置/etc/systemd/system/ollama.service文件中的[Service]下面添加：
-``` sh
-Environment="OLLAMA_HOST=0.0.0.0:11434"
-Environment="OLLAMA_ORIGINS=*"
-```
-通过局域网的电脑中安装Cherry Studio软件，并配置添加后台API信息，以我的环境为例，添加了一条命名为“local”的OpenAI类型的模型服务接口（如下图）。
-![cherry studio demo](/images/posts/deepseek_deploy/image-cherry-studio-demo.png)
+    因测试前端软件运行的本人电脑，与运行ollama和DeepSeek-R1的机器放在相同局域内网，因此，需要调整ollama配置，并重新启动。
+    ubuntu在默认位置/etc/systemd/system/ollama.service文件中的[Service]下面添加：
+    ``` sh
+    Environment="OLLAMA_HOST=0.0.0.0:11434"
+    Environment="OLLAMA_ORIGINS=*"
+    ```
+    通过局域网的电脑中安装Cherry Studio软件，并配置添加后台API信息，以我的环境为例，添加了一条命名为“local”的OpenAI类型的模型服务接口（如下图）。
+    ![cherry studio demo](/images/posts/deepseek_deploy/image-cherry-studio-demo.png)
 
-在对话页面，就可以像其他网页大模型一样跟我们搭建好的本地大模型进行对话，。
-![cherry talking](/images/posts/deepseek_deploy/image-cherry-talking.png)
+    在对话页面，就可以像其他网页大模型一样跟我们搭建好的本地大模型进行对话，。
+    ![cherry talking](/images/posts/deepseek_deploy/image-cherry-talking.png)
 
-此时，在后台查看GPU使用情况，可以看到GPU内存平均每张卡占用30GB左右。
-![gpu usage](/images/posts/deepseek_deploy/image-gpu-usage1.png)
+    此时，在后台查看GPU使用情况，可以看到GPU内存平均每张卡占用30GB左右。
+    ![gpu usage](/images/posts/deepseek_deploy/image-gpu-usage1.png)
 
 2. 测试启动模型的最小GPU卡数
 
-减少GPU卡重新运行，如果将GPU卡减少到4块，实际使用的是序号为“0、1、2、3”四块GPU，在提问相同问题时，GPU的显存占用翻倍。
-![gpu usage 4 pieces](/images/posts/deepseek_deploy/image-gpu-usage-2.png)
+    减少GPU卡重新运行，如果将GPU卡减少到4块，实际使用的是序号为“0、1、2、3”四块GPU，在提问相同问题时，GPU的显存占用翻倍。
+    ![gpu usage 4 pieces](/images/posts/deepseek_deploy/image-gpu-usage-2.png)
 
-进一步如果将GPU卡减少到2块，在提问相同问题时，发现GPU的显存溢出，无法提供正确的回答。
+    进一步如果将GPU卡减少到2块，在提问相同问题时，发现GPU的显存溢出，无法提供正确的回答。
 
-因此，用ollama运行DeepSeek-R1-2.51Bit量化版本，建议使用3～4块H20。
+    因此，用ollama运行DeepSeek-R1-2.51Bit量化版本，建议使用3～4块H20。
 
 
 3. 测试1.58-bit量化所需卡数
 
-进一步降低量化精度，采用1.58-bit量化版本，实际测试两块H20显卡能够运行成功。
-![gpu usage 1.58bit](/images/posts/deepseek_deploy/image-gpu-usage-3.png)
+    进一步降低量化精度，采用1.58-bit量化版本，实际测试两块H20显卡能够运行成功。
+    ![gpu usage 1.58bit](/images/posts/deepseek_deploy/image-gpu-usage-3.png)
 
 ## 总结
 DeepSeek-R1系列发布了8个开源模型，其中原生DeepSeek的只有R1-Zero和R1，其他模型则是基于DeepSeek基础模型进行知识蒸馏，并采用Qwen或LLaMA架构的二次开发版本。本文动手部署了原生的R1版，当然受限于硬件条件限制采用了2.51-bit量化方案，并实际测试得出需要使用4块H20来进行部署2.51-bit量化的版本，需要2块H20来部署1.58-bit量化的版本。此外，根据社区的一些分析，R1经1.58-bit量化后最小可以部署在1张4090卡上，当然这种情况需要反复加载激活参数，对推理速度有较大的影响。
