@@ -59,9 +59,8 @@ cd searxng-docker
   - 删除caddy相关配置
   - 将外部端口改成需要的端口号
   - 以下是我使用的配置文件
-  ``` bash
+``` bash
 version: "3.7"
-
 services:
   redis:
     container_name: redis
@@ -83,7 +82,6 @@ services:
       options:
         max-size: "1m"
         max-file: "1"
-
   searxng:
     container_name: searxng
     image: docker.io/searxng/searxng:latest
@@ -109,19 +107,17 @@ services:
       options:
         max-size: "1m"
         max-file: "1"
-
 networks:
   searxng:
-
 volumes:
   valkey-data2:
-  ```  
+```  
 
 3. 修改.env文件中的SEARXNG_HOSTNAME
   这里采用局域网共享方式，所以填写主机的ip和服务的端口号
-  ``` bash
-  SEARXNG_HOSTNAME=192.168.31.222:8085
-  ```
+``` bash
+SEARXNG_HOSTNAME=192.168.31.222:8085
+```
 
 4. 删除searxng/setting.yml后，第一次启动 docker
 命令会自动新生成一个setting.yml新文件。
