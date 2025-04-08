@@ -60,58 +60,61 @@ cd searxng-docker
   - 将外部端口改成需要的端口号
   - 以下是我使用的配置文件
 ``` bash
-  version: "3.7"
-  services:
-    redis:
-      container_name: redis
-      image: docker.io/valkey/valkey:8-alpine
-      command: valkey-server --save 30 1 --loglevel warning
-      restart: unless-stopped
-      networks:
-        - searxng
-      volumes:
-        - valkey-data2:/data
-      cap_drop:
-        - ALL
-      cap_add:
-        - SETGID
-        - SETUID
-        - DAC_OVERRIDE
-      logging:
-        driver: "json-file"
-        options:
-          max-size: "1m"
-          max-file: "1"
+version: "3.7"
 
-    searxng:
-      container_name: searxng
-      image: docker.io/searxng/searxng:latest
-      restart: unless-stopped
-      networks:
-        - searxng
-      ports:
-        - "0.0.0.0:8085:8080"
-      volumes:
-        - ./searxng:/etc/searxng:rw
-      environment:
-        - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
-        - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
-        - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
-      cap_drop:
-        - ALL
-      cap_add:
-        - CHOWN
-        - SETGID
-        - SETUID
-      logging:
-        driver: "json-file"
-        options:
-          max-size: "1m"
-          max-file: "1"
-  networks:
-    searxng:
-  volumes:
-    valkey-data2:
+services:
+  redis:
+    container_name: redis
+    image: docker.io/valkey/valkey:8-alpine
+    command: valkey-server --save 30 1 --loglevel warning
+    restart: unless-stopped
+    networks:
+      - searxng
+    volumes:
+      - valkey-data2:/data
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
+  searxng:
+    container_name: searxng
+    image: docker.io/searxng/searxng:latest
+    restart: unless-stopped
+    networks:
+      - searxng
+    ports:
+      - "0.0.0.0:8085:8080"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
+      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
+networks:
+  searxng:
+
+volumes:
+  valkey-data2:
 ```  
 
 3. 修改.env文件中的SEARXNG_HOSTNAME
