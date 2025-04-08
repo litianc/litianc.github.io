@@ -127,25 +127,25 @@ docker compose up -d
 ```
 
 5. 停止docker，修改setting.yml
-  ``` bash
-  docker compose down
-  vi searxng/setting.yml
-  ```
+``` bash
+docker compose down
+vi searxng/setting.yml
+```
  - 在formats中增加json格式
  - 关闭除bing以外的所有搜索引擎
- ``` bash
-   ...
-   formats:
-    - html
-    - json
-   ...
-   engines:
-    - name: bing
-      engine: bing
-      shortcut: bi
-      disabled: false
-   ...
- ```
+``` bash
+...
+formats:
+- html
+- json
+...
+engines:
+- name: bing
+  engine: bing
+  shortcut: bi
+  disabled: false
+...
+```
 6. 再次启动容器
 ``` bash
 docker compose up -d
