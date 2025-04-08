@@ -54,6 +54,7 @@ tags: AI 人工智能 DeepSeek SearXNG
 git clone https://github.com/searxng/searxng-docker.git
 cd searxng-docker
 ```
+
 2. 在docker-compose.yaml中去掉caddy配置（没有https证书需求时可以去掉）
   - 删除caddy相关配置
   - 将外部端口改成需要的端口号
@@ -115,6 +116,7 @@ cd searxng-docker
   volumes:
     valkey-data2:
 ```  
+
 3. 修改.env文件中的SEARXNG_HOSTNAME
   这里采用局域网共享方式，所以填写主机的ip和服务的端口号
   ``` bash
