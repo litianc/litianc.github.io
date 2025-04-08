@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 跟进DeepSeek-R1（二）：本地部署模型的 APIKEY 功能 
+title: 跟进DeepSeek部署（二）：本地部署模型的 APIKEY 功能 
 description: Ollama是本地部署大模型最通用的软件之一，对于有一定算力性能的电脑，装上ollama便可得到一个私人的AI助理。然而，以下两种情形可能会遇到较大的挑战...
 tags: AI 人工智能 DeepSeek Ollama
 ---
