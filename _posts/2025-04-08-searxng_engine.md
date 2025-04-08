@@ -58,8 +58,7 @@ cd searxng-docker
   - 删除caddy相关配置
   - 将外部端口改成需要的端口号
   - 以下是我使用的配置文件
-
-  ``` yaml
+``` yaml
   version: "3.7"
 
   services:
@@ -115,8 +114,7 @@ cd searxng-docker
 
   volumes:
     valkey-data2:
-  ```
-  
+```  
 3. 修改.env文件中的SEARXNG_HOSTNAME
   这里采用局域网共享方式，所以填写主机的ip和服务的端口号
   ``` bash
