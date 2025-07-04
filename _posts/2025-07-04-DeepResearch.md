@@ -31,10 +31,10 @@ tags: AI 人工智能 DeepSeek DeepResearch
 Deep Research 不是某一家大模型公司的专属产品，而是一类技术的统称。据调查，当前市面上有超过80种Deep Research相关产品，我们耳熟能详的OpenAI、Google Gemini、Anthropic都推出了自家的Deep Research产品。
 
 从运行过程来看，Deep Research充分展现了大模型在自主规划、工具使用、反思以及多智能体协作等方面的强大能力。这是Google Gemini团队开源的DeepResearch项目界面。
-![gemini deep research](/images/posts/DeepResearch/DeepResearch_demo.png)
+![gemini deep research](/images/posts/DeepResearch/deepresearch_demo.png)
 
 从benchmark跑分结果来看，Deep Research能够取得比原先最先进的大模型更好的得分，这是OpenAI发布Deep Research时的测试结论。
-![open ai gaia benchmark](/images/posts/DeepResearch/DeepResearch_benchmark.png)
+![open ai gaia benchmark](/images/posts/DeepResearch/deepresearch_benchmark.png)
 
 ## Deep Research的工作原理
 
