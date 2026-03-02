@@ -92,29 +92,7 @@ func wrapReleaseOnDone(ctx context.Context, releaseFunc func()) func() {
 
 ### 槽位生命周期流程图
 
-```mermaid
-flowchart TD
-    A[HTTP 请求进入] --> B[生成 requestID]
-    B --> C[执行 Lua 脚本]
-    C --> D{清理过期槽位后<br/>requestID 已存在?}
-    D -->|是| E[刷新时间戳<br/>返回成功]
-    D -->|否| F{当前活跃数<br/>< maxConcurrency?}
-    F -->|是| G[ZADD 写入新槽位<br/>返回成功]
-    F -->|否| H[返回失败<br/>等待重试]
-    E --> I[wrapReleaseOnDone<br/>注册三重保险]
-    G --> I
-    H --> J{等待后重试?}
-    J -->|是| C
-    J -->|否| K[返回 429 Too Many Requests]
-    I --> L[转发请求到上游模型]
-    L --> M{请求完成?}
-    M -->|正常完成| N[主动调用 release]
-    M -->|客户端断开| O[Context 取消触发释放]
-    M -->|异常未释放| P[15分钟 TTL 过期清理]
-    N --> Q[ZREM 移除槽位]
-    O --> Q
-    P --> Q
-```
+![槽位流程](/images/posts/openclaw_concurrency/image.png)
 
 ## 三、排查实录：一个数字引发的追查
 
