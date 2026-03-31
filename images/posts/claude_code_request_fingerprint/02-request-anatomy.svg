@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code 主模型请求结构示意图</title>
+  <desc id="desc">展示 Claude Code 主模型请求中稳定骨架、条件字段、表面容易模仿的部分以及真正难模仿的联动部分。</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 34px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .subtitle { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .box-title { font: 700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .box-text { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .footer { font: 500 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="680" rx="24"/>
+  <text class="title" x="60" y="72">图 2：一个主模型请求在结构上大致是什么样</text>
+  <text class="subtitle" x="60" y="110">真正要看的，不只是有哪些字段，而是哪些字段稳定、哪些字段会跟运行时一起变化。</text>
+
+  <rect x="70" y="160" width="500" height="150" rx="18" fill="#f8fafc" stroke="#d1d5db" stroke-width="3"/>
+  <text class="box-title" x="100" y="205">稳定骨架</text>
+  <text class="box-text" x="100" y="248">model / messages / system</text>
+  <text class="box-text" x="100" y="278">tools / metadata / max_tokens</text>
+
+  <rect x="630" y="160" width="500" height="150" rx="18" fill="#f8fafc" stroke="#d1d5db" stroke-width="3"/>
+  <text class="box-title" x="660" y="205">条件字段</text>
+  <text class="box-text" x="660" y="248">tool_choice / betas / thinking</text>
+  <text class="box-text" x="660" y="278">context_management / output_config / speed</text>
+
+  <rect x="70" y="360" width="500" height="170" rx="18" fill="#eef6ff" stroke="#4f8cc9" stroke-width="3"/>
+  <text class="box-title" x="100" y="405">表面容易模仿</text>
+  <text class="box-text" x="100" y="448">model 名</text>
+  <text class="box-text" x="100" y="478">基础 headers</text>
+  <text class="box-text" x="100" y="508">messages 外壳</text>
+
+  <rect x="630" y="360" width="500" height="170" rx="18" fill="#fff7ed" stroke="#d59a2f" stroke-width="3"/>
+  <text class="box-title" x="660" y="405">真正难模仿</text>
+  <text class="box-text" x="660" y="448">字段何时出现、何时消失</text>
+  <text class="box-text" x="660" y="478">字段之间怎样联动</text>
+  <text class="box-text" x="660" y="508">同一会话里如何持续保持一致</text>
+
+  <text class="footer" x="70" y="605">如果只抄一份静态 payload，通常只能模仿某一个时刻，而不是整个请求生成过程。</text>
+</svg>

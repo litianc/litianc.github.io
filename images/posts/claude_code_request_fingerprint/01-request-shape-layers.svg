@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code 请求形态的五层结构</title>
+  <desc id="desc">展示 Claude Code 请求形态由 Header、Auth、Top-level Body、Normalization 和 Session State 五层共同组成。</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 34px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .subtitle { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .box-title { font: 700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .box-text { font: 500 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .note { font: 500 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760" rx="24"/>
+  <text class="title" x="60" y="72">图 1：Claude Code 的请求形态不是一个 Header，而是五层叠加的结果</text>
+  <text class="subtitle" x="60" y="110">单点模仿往往只能学到“表面”，真正难的是把这五层一起学像。</text>
+
+  <rect x="70" y="150" width="1060" height="88" rx="18" fill="#eef6ff" stroke="#4f8cc9" stroke-width="3"/>
+  <text class="box-title" x="100" y="187">第 1 层：Header</text>
+  <text class="box-text" x="100" y="218">User-Agent、x-app、session id、client request id</text>
+
+  <rect x="70" y="258" width="1060" height="88" rx="18" fill="#eefcf3" stroke="#47a56b" stroke-width="3"/>
+  <text class="box-title" x="100" y="295">第 2 层：Auth</text>
+  <text class="box-text" x="100" y="326">OAuth、API key、beta 头、Bearer 注入路径</text>
+
+  <rect x="70" y="366" width="1060" height="88" rx="18" fill="#fff8e8" stroke="#d59a2f" stroke-width="3"/>
+  <text class="box-title" x="100" y="403">第 3 层：Top-level Body</text>
+  <text class="box-text" x="100" y="434">model、messages、system、tools、metadata、thinking、output_config</text>
+
+  <rect x="70" y="474" width="1060" height="88" rx="18" fill="#f7f1ff" stroke="#8f63c9" stroke-width="3"/>
+  <text class="box-title" x="100" y="511">第 4 层：Normalization</text>
+  <text class="box-text" x="100" y="542">消息合并、字段剥离、tool_result 配对修补、附件重排</text>
+
+  <rect x="70" y="582" width="1060" height="88" rx="18" fill="#fff1f3" stroke="#cf5b77" stroke-width="3"/>
+  <text class="box-title" x="100" y="619">第 5 层：Session State</text>
+  <text class="box-text" x="100" y="650">tool search、cache、latched betas、会话历史、provider 差异</text>
+
+  <text class="note" x="70" y="722">结论：抓包抓到的是最后一层结果，真正难的是把五层背后的生成逻辑一起复现。</text>
+</svg>

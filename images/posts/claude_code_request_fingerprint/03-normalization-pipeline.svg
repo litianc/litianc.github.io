@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code 请求发送前的整理流水线</title>
+  <desc id="desc">展示 Claude Code 在请求发送前，从原始会话消息到最终 wire payload 之间的几步整理过程。</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 34px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .subtitle { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .chip { font: 700 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .footer { font: 500 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+      .arrow { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #000000; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="420" rx="24"/>
+  <text class="title" x="60" y="72">图 3：真实请求在发出去之前，还会经过一条整理流水线</text>
+  <text class="subtitle" x="60" y="110">抓包看到的是最后一站，不是中途每一站。</text>
+
+  <rect x="70" y="180" width="210" height="74" rx="37" fill="#eef6ff" stroke="#4f8cc9" stroke-width="3"/>
+  <text class="chip" x="107" y="225">原始会话消息</text>
+
+  <text class="arrow" x="315" y="226">→</text>
+
+  <rect x="360" y="180" width="270" height="74" rx="37" fill="#eefcf3" stroke="#47a56b" stroke-width="3"/>
+  <text class="chip" x="398" y="225">normalizeMessagesForAPI</text>
+
+  <text class="arrow" x="668" y="226">→</text>
+
+  <rect x="710" y="180" width="220" height="74" rx="37" fill="#fff8e8" stroke="#d59a2f" stroke-width="3"/>
+  <text class="chip" x="744" y="225">strip caller / refs</text>
+
+  <text class="arrow" x="965" y="226">→</text>
+
+  <rect x="1010" y="180" width="250" height="74" rx="37" fill="#f7f1ff" stroke="#8f63c9" stroke-width="3"/>
+  <text class="chip" x="1042" y="225">ensureToolResultPairing</text>
+
+  <text class="arrow" x="1295" y="226">→</text>
+
+  <rect x="1110" y="300" width="220" height="74" rx="37" fill="#fff1f3" stroke="#cf5b77" stroke-width="3"/>
+  <text class="chip" x="1150" y="345">最终 wire payload</text>
+
+  <text class="footer" x="70" y="350">同一个“看起来一样”的会话，如果整理流程不同，最终发出去的请求也会长得不一样。</text>
+</svg>
