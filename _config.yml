@@ -7,6 +7,7 @@ avatarTitle: litianc
 # 头像里面的描述
 avatarDesc: Developer / 区块链
 url: "https://litianc.github.io"
+timezone: Asia/Shanghai
 
 # 博客是否自动生成目录，false为不生成
 enableToc: true
@@ -77,5 +78,4 @@ nav:
 plugins: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
-
 
