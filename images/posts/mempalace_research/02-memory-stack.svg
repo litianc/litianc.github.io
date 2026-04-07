@@ -3,13 +3,14 @@
   <desc id="desc">图示展示 L0 到 L3 四层记忆栈，以及用户问题如何经过 wake-up、room narrowing、drawer retrieval 和 temporal KG 校验形成回答。</desc>
   <defs>
     <style>
+      .font { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; text-rendering: geometricPrecision; }
       .bg { fill: #f6f7fb; }
-      .title { font: 700 34px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #20263b; }
-      .subtitle { font: 500 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #46506d; }
-      .layer-title { font: 700 24px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #20263b; }
-      .text { font: 500 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #27304a; }
-      .small { font: 500 16px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #4a5678; }
-      .note { font: 600 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #20263b; }
+      .title { font-size: 34px; font-weight: 700; fill: #20263b; }
+      .subtitle { font-size: 18px; font-weight: 500; fill: #46506d; }
+      .layer-title { font-size: 24px; font-weight: 700; fill: #20263b; }
+      .text { font-size: 18px; font-weight: 500; fill: #27304a; }
+      .small { font-size: 16px; font-weight: 500; fill: #4a5678; }
+      .note { font-size: 18px; font-weight: 600; fill: #20263b; }
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#6072a5"/>
@@ -17,60 +18,60 @@
   </defs>
 
   <rect class="bg" x="0" y="0" width="1200" height="820" rx="24"/>
-  <text class="title" x="56" y="70">图 2：MemPalace 的四层记忆栈不是一个大向量库，而是一条从唤醒到深搜的检索链</text>
-  <text class="subtitle" x="56" y="106">真正的交互顺序通常是：先给模型一个轻量 wake-up，再把问题缩到正确的 room，最后回到 drawer 和时间图谱找证据。</text>
+  <text class="font title" x="56" y="70">图 2：MemPalace 的四层记忆栈不是一个大向量库，而是一条从唤醒到深搜的检索链</text>
+  <text class="font subtitle" x="56" y="106">真正的交互顺序通常是：先给模型一个轻量 wake-up，再把问题缩到正确的 room，最后回到 drawer 和时间图谱找证据。</text>
 
   <rect x="68" y="148" width="520" height="560" rx="24" fill="#ffffff" stroke="#8ea2d8" stroke-width="3"/>
-  <text class="layer-title" x="98" y="190">左侧：四层记忆栈</text>
+  <text class="font layer-title" x="98" y="190">左侧：四层记忆栈</text>
 
   <rect x="98" y="224" width="460" height="88" rx="18" fill="#eef2ff" stroke="#8ea2d8" stroke-width="2.5"/>
-  <text class="layer-title" x="126" y="260">L0 Identity</text>
-  <text class="small" x="126" y="289">稳定身份、角色、长期不变的基本信息</text>
+  <text class="font layer-title" x="126" y="260">L0 Identity</text>
+  <text class="font small" x="126" y="289">稳定身份、角色、长期不变的基本信息</text>
 
   <rect x="98" y="334" width="460" height="104" rx="18" fill="#edf8ff" stroke="#6ea8c9" stroke-width="2.5"/>
-  <text class="layer-title" x="126" y="370">L1 Essential Story</text>
-  <text class="small" x="126" y="399">由系统生成的轻量 wake-up，帮助模型快速进入上下文</text>
-  <text class="small" x="126" y="424">不是完整记忆，只是“先把你叫醒”</text>
+  <text class="font layer-title" x="126" y="370">L1 Essential Story</text>
+  <text class="font small" x="126" y="399">由系统生成的轻量 wake-up，帮助模型快速进入上下文</text>
+  <text class="font small" x="126" y="424">不是完整记忆，只是“先把你叫醒”</text>
 
   <rect x="98" y="460" width="460" height="104" rx="18" fill="#eefaf5" stroke="#75b194" stroke-width="2.5"/>
-  <text class="layer-title" x="126" y="496">L2 On-Demand Recall</text>
-  <text class="small" x="126" y="525">按 wing / hall / room 缩小搜索空间</text>
-  <text class="small" x="126" y="550">先判断“去哪个房间找”</text>
+  <text class="font layer-title" x="126" y="496">L2 On-Demand Recall</text>
+  <text class="font small" x="126" y="525">按 wing / hall / room 缩小搜索空间</text>
+  <text class="font small" x="126" y="550">先判断“去哪个房间找”</text>
 
   <rect x="98" y="586" width="460" height="92" rx="18" fill="#fff6e8" stroke="#d3a05e" stroke-width="2.5"/>
-  <text class="layer-title" x="126" y="622">L3 Deep Search</text>
-  <text class="small" x="126" y="651">回到 drawer 原文、embedding 检索和更深层证据</text>
+  <text class="font layer-title" x="126" y="622">L3 Deep Search</text>
+  <text class="font small" x="126" y="651">回到 drawer 原文、embedding 检索和更深层证据</text>
 
   <rect x="640" y="148" width="492" height="560" rx="24" fill="#ffffff" stroke="#8ea2d8" stroke-width="3"/>
-  <text class="layer-title" x="670" y="190">右侧：一条真实问题的检索路径</text>
+  <text class="font layer-title" x="670" y="190">右侧：一条真实问题的检索路径</text>
 
   <rect x="670" y="230" width="432" height="82" rx="18" fill="#f3f5fb" stroke="#a1adca" stroke-width="2.5"/>
-  <text class="text" x="698" y="264">用户问题</text>
-  <text class="small" x="698" y="292">“上个月关于鉴权迁移我们最后是怎么定的？”</text>
+  <text class="font text" x="698" y="264">用户问题</text>
+  <text class="font small" x="698" y="292">“上个月关于鉴权迁移我们最后是怎么定的？”</text>
 
   <line x1="886" y1="312" x2="886" y2="354" stroke="#6072a5" stroke-width="3" marker-end="url(#arrow)"/>
 
   <rect x="670" y="364" width="432" height="84" rx="18" fill="#edf8ff" stroke="#6ea8c9" stroke-width="2.5"/>
-  <text class="text" x="698" y="398">Step 1: Wake-up</text>
-  <text class="small" x="698" y="426">先加载 L0 / L1，给模型一个轻量背景</text>
+  <text class="font text" x="698" y="398">Step 1: Wake-up</text>
+  <text class="font small" x="698" y="426">先加载 L0 / L1，给模型一个轻量背景</text>
 
   <line x1="886" y1="448" x2="886" y2="490" stroke="#6072a5" stroke-width="3" marker-end="url(#arrow)"/>
 
   <rect x="670" y="500" width="432" height="88" rx="18" fill="#eefaf5" stroke="#75b194" stroke-width="2.5"/>
-  <text class="text" x="698" y="534">Step 2: Room Narrowing</text>
-  <text class="small" x="698" y="562">先锁定正确的 wing / room，而不是全库盲搜</text>
+  <text class="font text" x="698" y="534">Step 2: Room Narrowing</text>
+  <text class="font small" x="698" y="562">先锁定正确的 wing / room，而不是全库盲搜</text>
 
   <line x1="886" y1="588" x2="886" y2="630" stroke="#6072a5" stroke-width="3" marker-end="url(#arrow)"/>
 
   <rect x="670" y="640" width="204" height="90" rx="18" fill="#fff6e8" stroke="#d3a05e" stroke-width="2.5"/>
-  <text class="text" x="698" y="675">Step 3: Drawer Evidence</text>
-  <text class="small" x="698" y="703">回到原文段落</text>
+  <text class="font text" x="698" y="675">Step 3: Drawer Evidence</text>
+  <text class="font small" x="698" y="703">回到原文段落</text>
 
   <rect x="898" y="640" width="204" height="90" rx="18" fill="#fff0f2" stroke="#cf7288" stroke-width="2.5"/>
-  <text class="text" x="926" y="675">Temporal KG Check</text>
-  <text class="small" x="926" y="703">确认谁、何时、现在是否仍然成立</text>
+  <text class="font text" x="926" y="675">Temporal KG Check</text>
+  <text class="font small" x="926" y="703">确认谁、何时、现在是否仍然成立</text>
 
   <path d="M 874 685 C 886 685, 886 685, 898 685" fill="none" stroke="#8f8f8f" stroke-width="2.5" stroke-dasharray="7 7"/>
 
-  <text class="note" x="68" y="770">结论：MemPalace 关心的不是“把所有记忆压成一个 summary”，而是让模型先被唤醒，再被引到正确的房间，最后拿到原文证据。</text>
+  <text class="font note" x="68" y="770">结论：MemPalace 关心的不是“把所有记忆压成一个 summary”，而是让模型先被唤醒，再被引到正确的房间，最后拿到原文证据。</text>
 </svg>
