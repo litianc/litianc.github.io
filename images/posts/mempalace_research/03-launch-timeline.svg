@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">MemPalace 的发布、传播与争议时间线</title>
+  <desc id="desc">图示展示从 PyPI 包发布、GitHub 仓库上线，到传播扩散和 benchmark 质疑出现的时间线，说明 MemPalace 的热度来自多个因素叠加。</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbf8f4; }
+      .title { font: 700 34px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #2a2220; }
+      .subtitle { font: 500 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #5a4c47; }
+      .lane { font: 700 22px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #2a2220; }
+      .text { font: 600 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #2a2220; }
+      .small { font: 500 16px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #5a4c47; }
+      .note { font: 600 18px "IBM Plex Sans", "PingFang SC", sans-serif; fill: #2a2220; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760" rx="24"/>
+  <text class="title" x="56" y="68">图 3：MemPalace 的扩散不是单点技术传播，而是产品痛点、身份叙事和 benchmark headline 同时起效</text>
+  <text class="subtitle" x="56" y="104">同一个项目，在几天内同时经历了“构建完成”“叙事爆发”和“方法论审视”三条曲线。</text>
+
+  <line x1="180" y1="190" x2="1080" y2="190" stroke="#b9aca3" stroke-width="4"/>
+  <line x1="180" y1="370" x2="1080" y2="370" stroke="#b9aca3" stroke-width="4"/>
+  <line x1="180" y1="550" x2="1080" y2="550" stroke="#b9aca3" stroke-width="4"/>
+
+  <text class="lane" x="56" y="198">Build</text>
+  <text class="lane" x="56" y="378">Spread</text>
+  <text class="lane" x="56" y="558">Scrutiny</text>
+
+  <text class="small" x="188" y="146">2026-03-21</text>
+  <circle cx="220" cy="190" r="15" fill="#557c73"/>
+  <rect x="242" y="150" width="210" height="82" rx="18" fill="#eef6f4" stroke="#557c73" stroke-width="2.5"/>
+  <text class="text" x="266" y="184">PyPI: `aya-thekeeper`</text>
+  <text class="small" x="266" y="212">发布 `mempal`，项目身份叙事开始成形</text>
+
+  <text class="small" x="428" y="146">2026-03-28</text>
+  <circle cx="460" cy="190" r="15" fill="#557c73"/>
+  <rect x="482" y="150" width="210" height="82" rx="18" fill="#eef6f4" stroke="#557c73" stroke-width="2.5"/>
+  <text class="text" x="506" y="184">PyPI: `mempalace`</text>
+  <text class="small" x="506" y="212">包名落地，路线从概念走向可安装</text>
+
+  <text class="small" x="668" y="146">2026-04-05</text>
+  <circle cx="700" cy="190" r="15" fill="#557c73"/>
+  <rect x="722" y="150" width="312" height="82" rx="18" fill="#eef6f4" stroke="#557c73" stroke-width="2.5"/>
+  <text class="text" x="746" y="184">GitHub 核心提交出现</text>
+  <text class="small" x="746" y="212">palace 架构、benchmarks、基础代码同时上线</text>
+
+  <text class="small" x="188" y="326">2026-04-06</text>
+  <circle cx="220" cy="370" r="15" fill="#8763b8"/>
+  <rect x="242" y="330" width="272" height="82" rx="18" fill="#f4effc" stroke="#8763b8" stroke-width="2.5"/>
+  <text class="text" x="266" y="364">README 叙事完善</text>
+  <text class="small" x="266" y="392">高分 benchmark + 本地 memory system 口号成型</text>
+
+  <text class="small" x="536" y="326">2026-04-06 ~ 04-07</text>
+  <circle cx="568" cy="370" r="15" fill="#8763b8"/>
+  <rect x="590" y="330" width="228" height="82" rx="18" fill="#f4effc" stroke="#8763b8" stroke-width="2.5"/>
+  <text class="text" x="614" y="364">社交传播放大</text>
+  <text class="small" x="614" y="392">名人关联叙事、MCP、本地运行一起扩散</text>
+
+  <text class="small" x="842" y="326">2026-04-07</text>
+  <circle cx="874" cy="370" r="15" fill="#8763b8"/>
+  <rect x="896" y="330" width="184" height="82" rx="18" fill="#f4effc" stroke="#8763b8" stroke-width="2.5"/>
+  <text class="text" x="920" y="364">媒体与转发跟进</text>
+  <text class="small" x="920" y="392">项目成为“社区事件”</text>
+
+  <text class="small" x="280" y="506">2026-04-07</text>
+  <circle cx="312" cy="550" r="15" fill="#c76458"/>
+  <rect x="334" y="510" width="238" height="82" rx="18" fill="#fff1ef" stroke="#c76458" stroke-width="2.5"/>
+  <text class="text" x="358" y="544">GitHub issues 出现</text>
+  <text class="small" x="358" y="572">开始质疑 benchmark 口径与复现实验条件</text>
+
+  <text class="small" x="616" y="506">2026-04-07</text>
+  <circle cx="648" cy="550" r="15" fill="#c76458"/>
+  <rect x="670" y="510" width="232" height="82" rx="18" fill="#fff1ef" stroke="#c76458" stroke-width="2.5"/>
+  <text class="text" x="694" y="544">Reddit / 社区争论</text>
+  <text class="small" x="694" y="572">传播速度开始跑在方法核验前面</text>
+
+  <text class="note" x="56" y="706">结论：MemPalace 的热度来自三条曲线共振。技术痛点提供需求，身份叙事放大传播，benchmark headline 则把项目推上了争议中心。</text>
+</svg>
