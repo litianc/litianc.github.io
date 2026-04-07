@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 940,
     "title_lines": [
-      "图 2：MemPalace 的四层记忆栈不是一个大向量库，",
+      "图 3：MemPalace 的四层记忆栈不是一个大向量库，",
       "而是一条从唤醒到深搜的检索链"
     ],
     "subtitle_lines": [
