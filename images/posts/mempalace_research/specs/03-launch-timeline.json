@@ -1,0 +1,97 @@
+{
+  "kind": "timeline_lanes",
+  "meta": {
+    "title": "MemPalace Timeline",
+    "width": 1200,
+    "height": 860,
+    "title_lines": [
+      "图 3：MemPalace 的扩散不是单点技术传播，",
+      "而是产品痛点、身份叙事和高分同时起效"
+    ],
+    "subtitle_lines": [
+      "同一个项目，在几天内同时经历了“构建完成”“叙事爆发”",
+      "和“方法论审视”三条曲线。"
+    ]
+  },
+  "theme": {
+    "background": "#fbf8f4",
+    "text": "#2a2220",
+    "muted": "#5a4c47",
+    "line": "#b9aca3"
+  },
+  "lanes": [
+    {
+      "name": "Build",
+      "color": "#557c73",
+      "background": "#eef6f4",
+      "events": [
+        {
+          "date": "2026-03-21",
+          "title": "PyPI: `aya-thekeeper`",
+          "width": 250,
+          "body_lines": ["发布 `mempal`，项目身份叙事开始成形。"]
+        },
+        {
+          "date": "2026-03-28",
+          "title": "PyPI: `mempalace`",
+          "width": 250,
+          "body_lines": ["包名落地，路线从概念走向可安装。"]
+        },
+        {
+          "date": "2026-04-05",
+          "title": "GitHub 核心提交出现",
+          "width": 340,
+          "body_lines": ["palace 架构、benchmarks、基础代码同时上线。"]
+        }
+      ]
+    },
+    {
+      "name": "Spread",
+      "color": "#8763b8",
+      "background": "#f4effc",
+      "events": [
+        {
+          "date": "2026-04-06",
+          "title": "README 叙事完善",
+          "width": 310,
+          "body_lines": ["高分 benchmark + 本地 memory system 口号成型。"]
+        },
+        {
+          "date": "2026-04-06 ~ 04-07",
+          "title": "社交传播放大",
+          "width": 270,
+          "body_lines": ["名人关联叙事、MCP、本地运行一起扩散。"]
+        },
+        {
+          "date": "2026-04-07",
+          "title": "媒体与转发跟进",
+          "width": 220,
+          "body_lines": ["项目成为“社区事件”。"]
+        }
+      ]
+    },
+    {
+      "name": "Scrutiny",
+      "color": "#c76458",
+      "background": "#fff1ef",
+      "events": [
+        {
+          "date": "2026-04-07",
+          "title": "GitHub issues 出现",
+          "width": 270,
+          "body_lines": ["开始质疑 benchmark 口径与复现实验条件。"]
+        },
+        {
+          "date": "2026-04-07",
+          "title": "Reddit / 社区争论",
+          "width": 264,
+          "body_lines": ["传播速度开始跑在方法核验前面。"]
+        }
+      ]
+    }
+  ],
+  "footer_lines": [
+    "结论：MemPalace 的热度来自三条曲线共振。",
+    "技术痛点提供需求，身份叙事放大传播，高分则把项目推上了争议中心。"
+  ]
+}

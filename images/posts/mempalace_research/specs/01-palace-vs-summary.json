@@ -1,0 +1,79 @@
+{
+  "kind": "contrast_panels",
+  "meta": {
+    "title": "MemPalace vs Summary",
+    "width": 1200,
+    "height": 900,
+    "title_lines": [
+      "图 1：MemPalace 不是让 AI 记住一个结论，",
+      "而是先给它一座能回到原文的档案馆"
+    ],
+    "subtitle_lines": [
+      "真正的变化不在于“有没有 memory”，",
+      "而在于系统默认保留什么、检索时又能回到哪里。"
+    ]
+  },
+  "theme": {
+    "background": "#f8f5ee",
+    "text": "#1d2a2a",
+    "muted": "#385050",
+    "box_text": "#243535"
+  },
+  "left": {
+    "title": "传统摘要式记忆",
+    "subtitle": "核心逻辑：先压缩，再检索。",
+    "background": "#fffdf7",
+    "stroke": "#ccb98f",
+    "arrow": "#7b6a43",
+    "box_backgrounds": ["#f4efe2", "#f8f3ea", "#fbf7ee"],
+    "boxes": [
+      {
+        "title": "对话 / 文档 / 聊天记录",
+        "body_lines": ["原始上下文先进入系统"]
+      },
+      {
+        "title": "Summary / Profile / Preference",
+        "body_lines": ["AI 决定“什么值得记住”"]
+      },
+      {
+        "title": "检索到压缩后的结论",
+        "body_lines": ["快，但容易丢掉推理过程、时间关系和原文细节"]
+      }
+    ]
+  },
+  "right": {
+    "title": "MemPalace 的档案式记忆",
+    "subtitle": "核心逻辑：先保留原文，再分层唤醒和按需深搜。",
+    "background": "#fcfffb",
+    "stroke": "#6c9a8f",
+    "arrow": "#58706a",
+    "top_box": {
+      "background": "#eaf5f0",
+      "title": "对话 / 文档 / 项目碎片",
+      "body_lines": ["Claude Code、ChatGPT、Slack、plain text transcript"]
+    },
+    "split_boxes": [
+      {
+        "background": "#f3faf7",
+        "title": "Drawers",
+        "body_lines": ["逐字保存原文", "No summaries. Ever."]
+      },
+      {
+        "background": "#f3faf7",
+        "title": "Wings / Halls / Rooms",
+        "body_lines": ["把记忆组织成空间结构，", "而不是一个平面向量池"]
+      }
+    ],
+    "bottom_box": {
+      "background": "#e7f1ff",
+      "stroke": "#5f86ba",
+      "title": "Closets / Wake-up / Recall / KG",
+      "body_lines": ["先快速唤醒，再按主题和时间关系回到原文证据"]
+    }
+  },
+  "middle_note_lines": ["关键差异", "不是“记没记”", "而是“默认保留什么”"],
+  "footer_lines": [
+    "结论：MemPalace 想做的不是更会总结的 memory，",
+    "而是一个能让 AI 回到原文、时间线和空间结构的长期记忆外脑。"
+  ]
+}

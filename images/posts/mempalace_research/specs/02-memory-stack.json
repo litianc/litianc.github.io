@@ -1,0 +1,91 @@
+{
+  "kind": "memory_stack",
+  "meta": {
+    "title": "MemPalace Memory Stack",
+    "width": 1200,
+    "height": 940,
+    "title_lines": [
+      "图 2：MemPalace 的四层记忆栈不是一个大向量库，",
+      "而是一条从唤醒到深搜的检索链"
+    ],
+    "subtitle_lines": [
+      "真正的交互顺序通常是：先给模型一个轻量 wake-up，",
+      "再把问题缩到正确的 room，最后回到 drawer 和时间图谱找证据。"
+    ]
+  },
+  "theme": {
+    "background": "#f6f7fb",
+    "text": "#20263b",
+    "muted": "#46506d",
+    "muted2": "#4a5678",
+    "panel": "#ffffff",
+    "stroke": "#8ea2d8",
+    "arrow": "#6072a5"
+  },
+  "left_title": "左侧：四层记忆栈",
+  "left_cards": [
+    {
+      "title": "L0 Identity",
+      "background": "#eef2ff",
+      "stroke": "#8ea2d8",
+      "body_lines": ["稳定身份、角色、长期不变的基本信息"]
+    },
+    {
+      "title": "L1 Essential Story",
+      "background": "#edf8ff",
+      "stroke": "#6ea8c9",
+      "body_lines": ["由系统生成的轻量 wake-up，帮助模型快速进入上下文。", "不是完整记忆，只是“先把你叫醒”。"]
+    },
+    {
+      "title": "L2 On-Demand Recall",
+      "background": "#eefaf5",
+      "stroke": "#75b194",
+      "body_lines": ["按 wing / hall / room 缩小搜索空间，", "先判断“去哪个房间找”。"]
+    },
+    {
+      "title": "L3 Deep Search",
+      "background": "#fff6e8",
+      "stroke": "#d3a05e",
+      "body_lines": ["回到 drawer 原文、embedding 检索和更深层证据。"]
+    }
+  ],
+  "right_title": "右侧：一条真实问题的检索路径",
+  "steps": [
+    {
+      "title": "用户问题",
+      "background": "#f3f5fb",
+      "stroke": "#a1adca",
+      "body_lines": ["“上个月关于鉴权迁移我们最后是怎么定的？”"]
+    },
+    {
+      "title": "Step 1: Wake-up",
+      "background": "#edf8ff",
+      "stroke": "#6ea8c9",
+      "body_lines": ["先加载 L0 / L1，给模型一个轻量背景。"]
+    },
+    {
+      "title": "Step 2: Room Narrowing",
+      "background": "#eefaf5",
+      "stroke": "#75b194",
+      "body_lines": ["先锁定正确的 wing / room，而不是全库盲搜。"]
+    }
+  ],
+  "final_cards": [
+    {
+      "title": "Step 3: Drawer Evidence",
+      "background": "#fff6e8",
+      "stroke": "#d3a05e",
+      "body_lines": ["回到原文段落。"]
+    },
+    {
+      "title": "Temporal KG Check",
+      "background": "#fff0f2",
+      "stroke": "#cf7288",
+      "body_lines": ["确认谁、何时、现在是否仍然成立。"]
+    }
+  ],
+  "footer_lines": [
+    "结论：MemPalace 关心的不是“把所有记忆压成一个 summary”，",
+    "而是让模型先被唤醒，再被引到正确的房间，最后拿到原文证据。"
+  ]
+}
