@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MemPalace 为什么让 AI 圈集体侧目：一个长期记忆系统的技术野心、传播叙事与 benchmark 争议
+title: MemPalace：AI 长期记忆赛道上的皇冠明珠？
 description: 从 GitHub 仓库、BENCHMARKS、提交记录与社区讨论出发，拆解 MemPalace 的空间记忆设计、传播路径与争议口径。它也许还不是定论中的王者，但已经像一颗足够耀眼的皇冠明珠，把 AI 长期记忆重新做成了一套可检索、可唤醒、可追溯的档案系统。
 date: 2026-04-07
 tags: AI Agent Memory MemPalace MCP 技术笔记
