@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用 Hammerspoon 给 Mac 多屏加一个焦点灯
+title: 用 Hammerspoon 给 Mac 多屏加一个「鼠标焦点灯」
 description: 多屏办公时，鼠标在几个屏幕之间来回切换，注意力却不一定能立刻跟上。本文记录一次从真实使用痛点出发的小工具开发过程：使用 Hammerspoon 作为 macOS 自动化底座，开发 ScreenFocusDimmer Spoon，让当前鼠标所在屏幕保持明亮，其他屏幕自动变暗。
 date: 2026-06-05
 tags: Mac Hammerspoon 自动化 Spoon 效率工具 AI
